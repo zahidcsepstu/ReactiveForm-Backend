@@ -3,18 +3,19 @@ package com.example.employeemanager.service;
 import java.util.List;
 import java.util.UUID;
 
+import javax.transaction.Transactional;
+
 import com.example.employeemanager.exception.UserNotFoundException;
 import com.example.employeemanager.model.Employee;
 import com.example.employeemanager.repo.EmployeeRepo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional
 public class EmployeeService {
     private final EmployeeRepo employeeRepo;
 
-    @Autowired
     public EmployeeService(EmployeeRepo employeeRepo) {
         this.employeeRepo = employeeRepo;
     }
@@ -28,7 +29,7 @@ public class EmployeeService {
         return employeeRepo.save(employee);
     }
 
-    public List<Employee> findAllEmployee() {
+    public List<Employee> findAllEmployees() {
         return employeeRepo.findAll();
     }
 

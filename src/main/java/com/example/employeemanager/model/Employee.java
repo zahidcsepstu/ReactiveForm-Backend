@@ -1,19 +1,18 @@
 package com.example.employeemanager.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class Employee implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private long id;
+    private Long id;
     private String name;
     private String email;
     private String jobTitle;
@@ -25,9 +24,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(long id, String name, String email, String jobTitle, String phone, String imageUrl,
-            String employeeCode) {
-        this.id = id;
+    public Employee(String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
@@ -36,16 +33,16 @@ public class Employee implements Serializable {
         this.employeeCode = employeeCode;
     }
 
-    public long getId() {
-        return this.id;
+    public Long getId() {
+        return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -53,7 +50,7 @@ public class Employee implements Serializable {
     }
 
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     public void setEmail(String email) {
@@ -61,7 +58,7 @@ public class Employee implements Serializable {
     }
 
     public String getJobTitle() {
-        return this.jobTitle;
+        return jobTitle;
     }
 
     public void setJobTitle(String jobTitle) {
@@ -69,7 +66,7 @@ public class Employee implements Serializable {
     }
 
     public String getPhone() {
-        return this.phone;
+        return phone;
     }
 
     public void setPhone(String phone) {
@@ -77,7 +74,7 @@ public class Employee implements Serializable {
     }
 
     public String getImageUrl() {
-        return this.imageUrl;
+        return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
@@ -85,11 +82,16 @@ public class Employee implements Serializable {
     }
 
     public String getEmployeeCode() {
-        return this.employeeCode;
+        return employeeCode;
     }
 
     public void setEmployeeCode(String employeeCode) {
         this.employeeCode = employeeCode;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" + "id=" + id + ", name='" + name + '\'' + ", email='" + email + '\'' + ", jobTitle='"
+                + jobTitle + '\'' + ", phone='" + phone + '\'' + ", imageUrl='" + imageUrl + '\'' + '}';
+    }
 }
