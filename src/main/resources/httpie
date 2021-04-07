@@ -1,0 +1,14 @@
+sudo apt install httpie
+
+http http://localhost:8080/employee/all
+
+http :8080/employee/all
+
+nano data.json
+
+http post :8080/employee/add < data.json
+
+http put :8080/employee/update < data.json 
+
+http delete :8080/employee/delete/1
+

@@ -39,6 +39,12 @@ public class EmployeeResource {
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
+    @GetMapping("/search/{name}")
+    public ResponseEntity<List<Employee>> getEmployeeById(@PathVariable("name") String name) {
+        List<Employee> employee = employeeService.findAllEmployeeByName(name);
+        return new ResponseEntity<>(employee, HttpStatus.OK);
+    }
+
     @PostMapping("/add")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
         Employee newEmployee = employeeService.addEmployee(employee);

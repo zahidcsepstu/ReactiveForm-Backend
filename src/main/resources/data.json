@@ -1,0 +1,20 @@
+[
+    {
+        "email": "jyoti.roy@mislbd.com",
+        "employeeCode": "b8b79f15-c30a-4eaa-95a5-3a6303ef8c7b",
+        "id": 1,
+        "imageUrl": "",
+        "jobTitle": "Assistant Software Engineer",
+        "name": "Jyoti Roy",
+        "phone": "01834520687"
+    },
+    {
+        "email": "zahid.hassan@mislbd.com",
+        "employeeCode": "49f907b8-cacb-469a-ac1f-c24398d189d0",
+        "id": 2,
+        "imageUrl": "https://bootdey.com/img/Content/avatar/avatar3.png",
+        "jobTitle": "Assistant Software Engineer",
+        "name": "Zahid",
+        "phone": "01834520200"
+    }
+]

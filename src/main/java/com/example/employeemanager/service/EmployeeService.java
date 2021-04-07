@@ -38,6 +38,10 @@ public class EmployeeService {
                 .orElseThrow(() -> new UserNotFoundException("user by id " + id + " was not found"));
     }
 
+    public List<Employee> findAllEmployeeByName(String name) {
+        return employeeRepo.findAllByNameContaining(name);
+    }
+
     public void deleteEmployee(Long id) {
         employeeRepo.deleteEmployeeById(id);
     }
