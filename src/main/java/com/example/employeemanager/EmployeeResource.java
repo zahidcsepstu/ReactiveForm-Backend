@@ -33,6 +33,12 @@ public class EmployeeResource {
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
+    @GetMapping("/allEmployeeEmail")
+    public ResponseEntity<List> getAllEmployeeEmail() {
+        List employeeEmails = employeeService.findAllEmployeeEmails();
+        return new ResponseEntity<>(employeeEmails, HttpStatus.OK);
+    }
+
     @GetMapping("/find/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") Long id) {
         Employee employee = employeeService.findEmployeeById(id);
