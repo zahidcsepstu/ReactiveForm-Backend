@@ -15,8 +15,8 @@ public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
     List<Employee> findAllByNameContaining(String name);
 
-    public static final String FIND_EMPLOYEE_MAIL = "SELECT email FROM employee";
+    // public static final String FIND_EMPLOYEE_MAIL = " 2";
 
-    @Query(value = FIND_EMPLOYEE_MAIL, nativeQuery = true)
-    public List findRmployeeEmails();
+    @Query(value = "SELECT email FROM employee where id <> ?1", nativeQuery = true)
+    List<String> findRmployeeEmails(Long id);
 }
